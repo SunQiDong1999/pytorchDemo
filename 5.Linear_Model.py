@@ -15,7 +15,7 @@ class LinearMode(torch.nn.Module):
 
 
 model = LinearMode()
-criterion = torch.nn.MSELoss(size_average=False)
+criterion = torch.nn.MSELoss(reduction='sum')
 optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
 
 for epoch in range(1000):
